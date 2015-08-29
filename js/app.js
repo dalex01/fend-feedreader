@@ -22,6 +22,15 @@ var allFeeds = [
         url: 'http://feeds.feedburner.com/udacity-linear-digressions'
     }
 ];
+/* Mockup for new functionality of adding new feed into allFeeds
+ */
+function addFeed(name, url) {
+    /* TODO:
+     * it's just a mockup
+     * functionality is not implemented yet
+     */
+}
+
 
 /* This function starts up our application. The Google Feed
  * Reader API is loaded asynchonously and will then call this
