@@ -5,7 +5,7 @@ In this project you are given a web-based application that reads RSS feeds. The 
 ## How to start
 
 To start this project you should download all project locally and
-start index.html file or just go to the following link: TBD
+start index.html file or just go to the following link: http://dalex01.github.io/frontend-nanodegree-feedreader
 
 ## Features tested and implemented
 
