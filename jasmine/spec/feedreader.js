@@ -23,60 +23,46 @@ $(function() {
          */
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
-            expect(allFeeds.length).not.toBe(0);
+            expect(allFeeds instanceof Array).toBeTruthy();
+            expect(allFeeds.length).toBeGreaterThan(0);
         });
 
 
-        /* TODO: Write a test that loops through each feed
+        /* Test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-
-        /* Function to verify existance of url field and its emptiness
-         * feedId - ID of feed in allFeeds data structure which to verify
-         */
-        function testEachFeedInallFeedsforURL(feedId) {
-            it('has a URL defined and that the URL is not empty for feed ' + feedId, function() {
+        it('has a URL defined and that the URL is not empty for each feed in allFeeds array', function() {
+            for(var feed = 0; feed < allFeeds.length; feed++) {
                 //URL field should be defined
-                expect(allFeeds[feedId].url).toBeDefined();
+                expect(allFeeds[feed].url).toBeDefined();
                 //Length of url should not be 0
-                expect(allFeeds[feedId].url.length).not.toBe(0);
-            });
-        }
+                expect(allFeeds[feed].url.length).toBeGreaterThan(0);
+                //URL is in correct format
+                expect(allFeeds[feed].url).toMatch(/^http(s?)\:\/\//);
+            }
+        });
 
-        /* Loop to verify each feed in allFeeds
-         */
-        for(var feed = 0; feed < allFeeds.length; feed++) {
-            testEachFeedInallFeedsforURL(feed);
-        }
-
-        /* TODO: Write a test that loops through each feed
+        /* Test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
 
-        /* Function to verify existance of name field and its emptiness
-         * feedId - ID of feed in allFeeds data structure which to verify
-         */
-        function testEachFeedInallFeedsforName(feedId) {
-            it('has a name defined and that the name is not empty for feed ' + feedId, function() {
+        it('has a name defined and that the name is not empty for each feed in allFeeds array', function() {
+            for(var feed = 0; feed < allFeeds.length; feed++) {
                 //Name field should be defined
-                expect(allFeeds[feedId].name).toBeDefined();
+                expect(allFeeds[feed].name).toBeDefined();
+                //Name has correct type
+                expect(typeof allFeeds[feed].name).toBe('string');
                 //Length of name should not be 0
-                expect(allFeeds[feedId].name.length).not.toBe(0);
-            });
-        }
+                expect(allFeeds[feed].name.length).toBeGreaterThan(0);
 
-        /* Loop to verify each feed in allFeeds
-         */
-        for(var feed = 0; feed < allFeeds.length; feed++) {
-            testEachFeedInallFeedsforName(feed);
-        }
+            }
+        });
     });
 
-    /* TODO: Write a new test suite named "The menu" */
     describe('The menu', function() {
-        /* TODO: Write a test that ensures the menu element is
+        /* Test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
@@ -88,7 +74,7 @@ $(function() {
             // Verify that menu is hidden.
             expect($('body').hasClass('menu-hidden')).toBe(true);
         });
-         /* TODO: Write a test that ensures the menu changes
+         /* Test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
@@ -105,9 +91,8 @@ $(function() {
         });
     });
 
-    /* TODO: Write a new test suite named "Initial Entries" */
     describe('Initial Entries', function() {
-        /* TODO: Write a test that ensures when the loadFeed
+        /* Test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
          * Remember, loadFeed() is asynchronous so this test wil require
@@ -140,9 +125,9 @@ $(function() {
             testEachFeedForInitialEntries(feed);
         }
     });
-    /* TODO: Write a new test suite named "New Feed Selection" */
+
     describe('New Feed Selection', function() {
-        /* TODO: Write a test that ensures when a new feed is loaded
+        /* Test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
