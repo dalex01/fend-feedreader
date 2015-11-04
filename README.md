@@ -1,11 +1,15 @@
 # Project Overview
 
-In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
+In this project I was given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to stop work under app and I'm now left with an application with an incomplete test suite. My goal was to complete test suite and write some new tests in TDD paradigm.
 
-## How to start
+## Requirements
 
-To start this project you should download all project locally and
-start index.html file or just go to the following link: http://dalex01.github.io/frontend-nanodegree-feedreader
+Project was reviewed according to this [rubric](http://i.imgur.com/79L92ou.png).
+
+# How to use
+
+* To see this project on your PC you should just clone repository with command `git clone https://github.com/dalex01/fend-feedreader.git` and start build/index.html file.
+* Or [click](http://dalex01.github.io/fend-feedreader)
 
 ## Features tested and implemented
 
